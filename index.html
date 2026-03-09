@@ -18,141 +18,67 @@
 --accent:#7eb8e8;
 --accent2:#a8d4f5;
 --silver:#c8daea;
---silver-dim:rgba(200,218,234,.55);
 --text:#ddeeff;
---text-dim:rgba(190,215,240,.5);
---glow:rgba(126,184,232,.18)
+--text-dim:rgba(190,215,240,.5)
 }
-
-html{scroll-behavior:smooth}
 
 body{
 font-family:'DM Mono',monospace;
 background:var(--bg);
 color:var(--text);
-min-height:100vh;
-overflow-x:hidden
-}
-
-.bg-layer{
-position:fixed;inset:0;z-index:0;pointer-events:none;
-background:
-radial-gradient(ellipse 80% 50% at 20% -10%,rgba(80,140,200,.18)0%,transparent 60%),
-radial-gradient(ellipse 60% 40% at 90% 80%,rgba(100,160,220,.13)0%,transparent 55%),
-linear-gradient(160deg,#0a0f16 0%,#0d1420 50%,#0b1319 100%)
-}
-
-.grid-overlay{
-position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.04;
-background-image:
-linear-gradient(var(--accent)1px,transparent 1px),
-linear-gradient(90deg,var(--accent)1px,transparent 1px);
-background-size:60px 60px
-}
-
-.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;opacity:0;animation:orbFloat 12s ease-in-out infinite}
-
-.orb1{width:420px;height:420px;background:rgba(80,140,210,.15);top:-10%;left:-10%;animation-delay:0s}
-.orb2{width:300px;height:300px;background:rgba(100,170,230,.1);bottom:5%;right:-5%;animation-delay:4s}
-.orb3{width:200px;height:200px;background:rgba(150,200,240,.09);top:40%;left:60%;animation-delay:7s}
-
-@keyframes orbFloat{
-0%{opacity:0;transform:translateY(0)scale(1)}
-20%{opacity:1}
-50%{transform:translateY(-30px)scale(1.05)}
-80%{opacity:1}
-100%{opacity:0;transform:translateY(0)scale(1)}
+min-height:100vh
 }
 
 .wrapper{
-position:relative;
-z-index:1;
-max-width:820px;
-margin:0 auto;
-padding:0 24px 80px
+max-width:1100px;
+margin:auto;
+padding:40px
 }
 
 header{
-padding:64px 0 48px;
-display:flex;
-flex-direction:column;
-align-items:center;
 text-align:center;
-opacity:0;
-animation:fadeUp .8s .2s forwards
-}
-
-.badge{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:6px 14px;
-border-radius:99px;
-border:1px solid var(--border);
-background:var(--surface);
-font-size:11px;
-letter-spacing:.12em;
-text-transform:uppercase;
-color:var(--accent2);
-margin-bottom:28px
+margin-bottom:50px
 }
 
 h1{
 font-family:'Syne',sans-serif;
-font-size:clamp(2.8rem,6vw,4.4rem);
-font-weight:800;
-line-height:1.05;
-letter-spacing:-.03em;
-background:linear-gradient(135deg,#fff 0%,var(--accent2)50%,var(--silver)100%);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-margin-bottom:18px
+font-size:50px;
+margin-bottom:10px
 }
 
 .subtitle{
-font-size:14px;
-color:var(--text-dim);
-letter-spacing:.04em;
-max-width:440px;
-line-height:1.7
+color:var(--text-dim)
 }
 
 .install-zone{
-margin:44px auto 0;
-display:flex;
-flex-direction:column;
-align-items:center;
-gap:14px
+text-align:center;
+margin-bottom:60px
 }
 
 .btn-install{
-padding:16px 48px;
-font-family:'Syne',sans-serif;
-font-size:15px;
+padding:16px 40px;
+font-family:'Syne';
 font-weight:700;
-text-transform:uppercase;
-color:#fff;
-background:linear-gradient(135deg,#2a6fa8,#4c9fd4,#2a6fa8);
+background:linear-gradient(135deg,#2a6fa8,#4c9fd4);
 border:none;
-border-radius:12px;
+border-radius:10px;
+color:white;
 cursor:pointer
 }
 
 .progress-wrap{
-width:100%;
-max-width:480px;
-margin:28px auto 0;
 display:none;
-flex-direction:column;
-gap:8px
+margin-top:20px
 }
 
-.progress-wrap.visible{display:flex}
+.progress-wrap.visible{
+display:block
+}
 
 .progress-track{
-height:3px;
-background:rgba(126,184,232,.12);
-border-radius:99px;
+height:4px;
+background:#222;
+border-radius:999px;
 overflow:hidden
 }
 
@@ -162,66 +88,45 @@ width:0%;
 background:linear-gradient(90deg,#4c9fd4,#a8d4f5)
 }
 
-.progress-label{
-font-size:11px;
-color:var(--text-dim);
-display:flex;
-justify-content:space-between
-}
-
 .docs{
-margin-top:80px;
 display:flex;
-flex-direction:column;
-align-items:center;
-gap:24px;
-opacity:0;
-animation:fadeUp .8s .4s forwards
-}
-
-.docs h2{
-font-family:'Syne',sans-serif;
-font-size:28px
+gap:40px;
+align-items:flex-start;
+margin-top:40px
 }
 
 .doc-card{
-width:100%;
-max-width:720px;
+flex:1;
 background:var(--surface);
 border:1px solid var(--border);
-border-radius:14px;
-padding:28px;
-line-height:1.7;
-font-size:13px;
-color:var(--text-dim)
+border-radius:12px;
+padding:25px;
+line-height:1.6
 }
 
 .doc-card h3{
-margin-top:18px;
-margin-bottom:6px;
-font-family:'Syne',sans-serif;
-font-size:15px;
-color:var(--silver)
+font-family:'Syne';
+margin-top:15px
 }
 
-.doc-card ul,
-.doc-card ol{
-padding-left:18px;
-margin-bottom:10px
+.gif-box{
+flex:1;
+display:flex;
+justify-content:center;
+align-items:center
+}
+
+.gif-box img{
+max-width:100%;
+border-radius:12px;
+border:1px solid var(--border)
 }
 
 footer{
-margin-top:80px;
-padding-top:28px;
-border-top:1px solid var(--border);
 text-align:center;
-font-size:11px;
-color:var(--text-dim)
-}
-
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(18px)}
-to{opacity:1;transform:translateY(0)}
+margin-top:60px;
+color:var(--text-dim);
+font-size:12px
 }
 
 </style>
@@ -229,21 +134,11 @@ to{opacity:1;transform:translateY(0)}
 
 <body>
 
-<div class="bg-layer"></div>
-<div class="grid-overlay"></div>
-<div class="orb orb1"></div>
-<div class="orb orb2"></div>
-<div class="orb orb3"></div>
-
 <div class="wrapper">
 
 <header>
-<div class="badge">v2.4.0 · Optimizer &lt;V5X&gt;</div>
-<h1>Instala el<br/>Optimizador</h1>
-<p class="subtitle">
-Una herramienta creada desde cero para mejorar el rendimiento de tu sistema.
-Ligera, rápida y completamente tuya.
-</p>
+<h1>Instala el Optimizador</h1>
+<p class="subtitle">Herramienta ligera para mejorar el rendimiento del sistema</p>
 </header>
 
 <div class="install-zone">
@@ -254,7 +149,7 @@ Ligera, rápida y completamente tuya.
 
 <div class="progress-wrap" id="progress-wrap">
 
-<div class="progress-label">
+<div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;">
 <span id="progress-step">Iniciando...</span>
 <span id="progress-pct">0%</span>
 </div>
@@ -267,46 +162,45 @@ Ligera, rápida y completamente tuya.
 
 </div>
 
-
 <section class="docs">
-
-<h2>Documentación</h2>
 
 <div class="doc-card">
 
+<h2>Documentación</h2>
+
 <h3>¿Qué es OptimizerV5X?</h3>
 <p>
-OptimizerV5X es una herramienta diseñada para mejorar el rendimiento del sistema
-optimizando procesos, limpiando tareas innecesarias y aplicando ajustes seguros.
+OptimizerV5X mejora el rendimiento del sistema eliminando procesos
+innecesarios y aplicando optimizaciones seguras.
 </p>
 
 <h3>Características</h3>
 <ul>
 <li>Optimización automática</li>
-<li>Instalación rápida</li>
-<li>Consumo mínimo de recursos</li>
-<li>Configuración segura</li>
+<li>Configuración rápida</li>
+<li>Ligero y eficiente</li>
 </ul>
 
 <h3>Requisitos</h3>
 <ul>
 <li>Windows 10 / 11</li>
 <li>4GB RAM mínimo</li>
-<li>100MB de espacio</li>
+<li>100MB espacio libre</li>
 </ul>
 
-<h3>Cómo usar</h3>
+<h3>Uso</h3>
 <ol>
 <li>Descarga el archivo</li>
 <li>Extrae el ZIP</li>
-<li>Ejecuta el programa</li>
-<li>Aplica optimizaciones</li>
+<li>Ejecuta el optimizador</li>
 </ol>
 
-<h3>Notas</h3>
-<p>
-Se recomienda crear un punto de restauración antes de aplicar optimizaciones avanzadas.
-</p>
+</div>
+
+<div class="gif-box">
+
+<!-- AQUI PON TU GIF -->
+<img src="demo.gif" alt="Demostración del optimizador">
 
 </div>
 
@@ -321,13 +215,12 @@ OptimizerV5X © 2026
 <script>
 
 const steps=[
-{label:'Verificando requisitos del sistema...',pct:10},
-{label:'Descargando paquetes...',pct:30},
-{label:'Extrayendo archivos...',pct:50},
-{label:'Configurando rutas del sistema...',pct:65},
-{label:'Aplicando optimizaciones base...',pct:80},
-{label:'Registrando servicios...',pct:92},
-{label:'Instalación completada ✓',pct:100}
+{label:'Verificando sistema...',pct:10},
+{label:'Descargando...',pct:30},
+{label:'Extrayendo...',pct:50},
+{label:'Configurando...',pct:70},
+{label:'Optimizando...',pct:90},
+{label:'Instalación completada',pct:100}
 ];
 
 async function startInstall(){
