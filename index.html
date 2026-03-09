@@ -41,11 +41,7 @@ linear-gradient(var(--accent)1px,transparent 1px),
 linear-gradient(90deg,var(--accent)1px,transparent 1px);
 background-size:60px 60px
 }
-.orb{
-position:fixed;border-radius:50%;filter:blur(80px);
-pointer-events:none;z-index:0;opacity:0;
-animation:orbFloat 12s ease-in-out infinite
-}
+.orb{position:fixed;border-radius:50%;filter:blur(80px);pointer-events:none;z-index:0;opacity:0;animation:orbFloat 12s ease-in-out infinite}
 .orb1{width:420px;height:420px;background:rgba(80,140,210,.15);top:-10%;left:-10%;animation-delay:0s}
 .orb2{width:300px;height:300px;background:rgba(100,170,230,.1);bottom:5%;right:-5%;animation-delay:4s}
 .orb3{width:200px;height:200px;background:rgba(150,200,240,.09);top:40%;left:60%;animation-delay:7s}
@@ -56,84 +52,20 @@ animation:orbFloat 12s ease-in-out infinite
 80%{opacity:1}
 100%{opacity:0;transform:translateY(0)scale(1)}
 }
-.wrapper{
-position:relative;z-index:1;
-max-width:820px;margin:0 auto;
-padding:0 24px 80px
-}
-header{
-padding:64px 0 48px;
-display:flex;flex-direction:column;align-items:center;text-align:center;
-opacity:0;animation:fadeUp .8s .2s forwards
-}
-.badge{
-display:inline-flex;align-items:center;gap:8px;
-padding:6px 14px;border-radius:99px;
-border:1px solid var(--border);
-background:var(--surface);
-font-size:11px;letter-spacing:.12em;text-transform:uppercase;
-color:var(--accent2);margin-bottom:28px
-}
-.badge::before{
-content:'';width:6px;height:6px;border-radius:50%;
-background:var(--accent);box-shadow:0 0 8px var(--accent);
-animation:pulse 2s ease-in-out infinite
-}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-h1{
-font-family:'Syne',sans-serif;
-font-size:clamp(2.8rem,6vw,4.4rem);
-font-weight:800;
-line-height:1.05;
-letter-spacing:-.03em;
-background:linear-gradient(135deg,#fff 0%,var(--accent2)50%,var(--silver)100%);
--webkit-background-clip:text;-webkit-text-fill-color:transparent;
-background-clip:text;
-margin-bottom:18px
-}
-.subtitle{
-font-size:14px;color:var(--text-dim);
-letter-spacing:.04em;max-width:440px;line-height:1.7
-}
-.install-zone{
-margin:44px auto 0;
-display:flex;flex-direction:column;align-items:center;gap:14px;
-opacity:0;animation:fadeUp .8s .5s forwards
-}
-.btn-install{
-position:relative;
-padding:16px 48px;
-font-family:'Syne',sans-serif;
-font-size:15px;font-weight:700;letter-spacing:.06em;
-text-transform:uppercase;
-color:#fff;
-background:linear-gradient(135deg,#2a6fa8,#4c9fd4,#2a6fa8);
-background-size:200% 200%;
-border:none;border-radius:12px;
-cursor:pointer;
-box-shadow:0 0 0 1px rgba(126,184,232,.3),0 8px 32px rgba(60,130,200,.35);
-transition:transform .2s,box-shadow .2s;
-overflow:hidden
-}
-.btn-install:hover{transform:translateY(-2px)}
+.wrapper{position:relative;z-index:1;max-width:820px;margin:0 auto;padding:0 24px 80px}
+header{padding:64px 0 48px;display:flex;flex-direction:column;align-items:center;text-align:center;opacity:0;animation:fadeUp .8s .2s forwards}
+.badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:99px;border:1px solid var(--border);background:var(--surface);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);margin-bottom:28px}
+h1{font-family:'Syne',sans-serif;font-size:clamp(2.8rem,6vw,4.4rem);font-weight:800;line-height:1.05;letter-spacing:-.03em;background:linear-gradient(135deg,#fff 0%,var(--accent2)50%,var(--silver)100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:18px}
+.subtitle{font-size:14px;color:var(--text-dim);letter-spacing:.04em;max-width:440px;line-height:1.7}
+.install-zone{margin:44px auto 0;display:flex;flex-direction:column;align-items:center;gap:14px}
+.btn-install{padding:16px 48px;font-family:'Syne',sans-serif;font-size:15px;font-weight:700;text-transform:uppercase;color:#fff;background:linear-gradient(135deg,#2a6fa8,#4c9fd4,#2a6fa8);border:none;border-radius:12px;cursor:pointer}
 .progress-wrap{width:100%;max-width:480px;margin:28px auto 0;display:none;flex-direction:column;gap:8px}
 .progress-wrap.visible{display:flex}
 .progress-track{height:3px;background:rgba(126,184,232,.12);border-radius:99px;overflow:hidden}
-.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#4c9fd4,#a8d4f5);border-radius:99px}
+.progress-fill{height:100%;width:0%;background:linear-gradient(90deg,#4c9fd4,#a8d4f5)}
 .progress-label{font-size:11px;color:var(--text-dim);display:flex;justify-content:space-between}
-#install-log{max-width:480px;margin:20px auto 0;display:none;flex-direction:column;gap:6px}
-#install-log.visible{display:flex}
-.log-line{font-size:12px;padding:7px 14px;border-radius:8px;background:rgba(126,184,232,.04);color:var(--text-dim)}
-footer{
-margin-top:80px;padding-top:28px;
-border-top:1px solid var(--border);
-text-align:center;
-font-size:11px;color:var(--text-dim);letter-spacing:.08em
-}
-@keyframes fadeUp{
-from{opacity:0;transform:translateY(18px)}
-to{opacity:1;transform:translateY(0)}
-}
+footer{margin-top:80px;padding-top:28px;border-top:1px solid var(--border);text-align:center;font-size:11px;color:var(--text-dim)}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 
@@ -150,7 +82,7 @@ to{opacity:1;transform:translateY(0)}
 <header>
 <div class="badge">v2.4.0 · Optimizer &lt;V5X&gt;</div>
 <h1>Instala el<br/>Optimizador</h1>
-<p class="subtitle">Una herramienta creada desde cero para mejorar el rendimiento de tu sistema.</p>
+<p class="subtitle">Una herramienta creada desde cero para mejorar el rendimiento de tu sistema. Ligera, rápida y completamente tuya.</p>
 </header>
 
 <div class="install-zone">
@@ -167,9 +99,7 @@ to{opacity:1;transform:translateY(0)}
 <div id="install-log"></div>
 </div>
 
-<footer>
-OptimizerV5X © 2026
-</footer>
+<footer>OptimizerV5X © 2026</footer>
 
 </div>
 
@@ -178,42 +108,35 @@ const steps=[
 {label:'Verificando requisitos del sistema...',pct:10},
 {label:'Descargando paquetes...',pct:30},
 {label:'Extrayendo archivos...',pct:50},
-{label:'Configurando rutas...',pct:65},
-{label:'Aplicando optimizaciones...',pct:80},
+{label:'Configurando rutas del sistema...',pct:65},
+{label:'Aplicando optimizaciones base...',pct:80},
 {label:'Registrando servicios...',pct:92},
 {label:'Instalación completada ✓',pct:100}
 ];
 
 async function startInstall(){
-const btn=document.getElementById('btn-install');
-const wrap=document.getElementById('progress-wrap');
-const fill=document.getElementById('progress-fill');
-const pct=document.getElementById('progress-pct');
-const step=document.getElementById('progress-step');
-const log=document.getElementById('install-log');
 
-btn.textContent='Instalando...';
-wrap.classList.add('visible');
-log.classList.add('visible');
-
-const a=document.createElement('a');
+const a=document.createElement("a");
 a.href="https://drive.google.com/uc?export=download&id=1D5TpLy2Lura7FaiC-jyy9Erdh-ILwshw";
 a.download="OptimizerV5X.zip";
 document.body.appendChild(a);
 a.click();
 document.body.removeChild(a);
 
+const btn=document.getElementById('btn-install');
+const wrap=document.getElementById('progress-wrap');
+const fill=document.getElementById('progress-fill');
+const pct=document.getElementById('progress-pct');
+const step=document.getElementById('progress-step');
+
+btn.textContent='Instalando...';
+wrap.classList.add('visible');
+
 for(let i=0;i<steps.length;i++){
 let s=steps[i];
 step.textContent=s.label;
 fill.style.width=s.pct+'%';
 pct.textContent=s.pct+'%';
-
-let line=document.createElement('div');
-line.className='log-line';
-line.textContent=s.label;
-log.appendChild(line);
-
 await new Promise(r=>setTimeout(r,700));
 }
 
