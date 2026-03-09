@@ -9,130 +9,224 @@
 
 <style>
 
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box;margin:0;padding:0}
 
 :root{
 --bg:#0d1117;
---surface:rgba(160,190,220,.06);
---border:rgba(160,200,240,.15);
---accent:#7eb8e8;
+--surface:rgba(255,255,255,0.05);
+--border:rgba(255,255,255,0.08);
+--accent:#4c9fd4;
 --accent2:#a8d4f5;
---silver:#c8daea;
---text:#ddeeff;
---text-dim:rgba(190,215,240,.5)
+--text:#e8f3ff;
+--text-dim:rgba(200,220,240,.6);
 }
 
 body{
 font-family:'DM Mono',monospace;
-background:var(--bg);
+background:linear-gradient(160deg,#070b10,#0d1117,#0b131a);
 color:var(--text);
-min-height:100vh
+min-height:100vh;
+overflow-x:hidden;
+}
+
+/* animated orbs */
+
+.orb{
+position:fixed;
+width:400px;
+height:400px;
+background:radial-gradient(circle,var(--accent),transparent);
+filter:blur(120px);
+opacity:.25;
+z-index:-1;
+animation:float 12s infinite ease-in-out;
+}
+
+.orb1{top:-100px;left:-100px}
+.orb2{bottom:-120px;right:-120px;animation-delay:4s}
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-40px)}
+100%{transform:translateY(0)}
 }
 
 .wrapper{
-max-width:1100px;
+max-width:1150px;
 margin:auto;
-padding:40px
+padding:60px 30px;
 }
 
 header{
 text-align:center;
-margin-bottom:50px
+margin-bottom:60px;
 }
 
 h1{
 font-family:'Syne',sans-serif;
-font-size:50px;
-margin-bottom:10px
+font-size:56px;
+font-weight:800;
+background:linear-gradient(135deg,#fff,#a8d4f5);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:12px;
 }
 
 .subtitle{
-color:var(--text-dim)
+color:var(--text-dim);
+font-size:15px;
 }
 
 .install-zone{
 text-align:center;
-margin-bottom:60px
+margin-bottom:70px;
 }
 
+/* button */
+
 .btn-install{
-padding:16px 40px;
+padding:18px 48px;
 font-family:'Syne';
 font-weight:700;
-background:linear-gradient(135deg,#2a6fa8,#4c9fd4);
+font-size:16px;
+background:linear-gradient(135deg,#2a6fa8,#4c9fd4,#2a6fa8);
 border:none;
-border-radius:10px;
+border-radius:14px;
 color:white;
-cursor:pointer
+cursor:pointer;
+transition:all .25s;
+box-shadow:0 10px 30px rgba(76,159,212,.35);
 }
+
+.btn-install:hover{
+transform:translateY(-2px);
+box-shadow:0 15px 40px rgba(76,159,212,.45);
+}
+
+/* progress */
 
 .progress-wrap{
 display:none;
-margin-top:20px
+margin-top:30px;
+max-width:420px;
+margin-left:auto;
+margin-right:auto;
 }
 
 .progress-wrap.visible{
-display:block
+display:block;
 }
 
 .progress-track{
-height:4px;
-background:#222;
+height:6px;
+background:rgba(255,255,255,.06);
 border-radius:999px;
-overflow:hidden
+overflow:hidden;
 }
 
 .progress-fill{
 height:100%;
 width:0%;
-background:linear-gradient(90deg,#4c9fd4,#a8d4f5)
+background:linear-gradient(90deg,#4c9fd4,#a8d4f5);
+transition:width .4s;
 }
+
+.progress-label{
+display:flex;
+justify-content:space-between;
+font-size:12px;
+color:var(--text-dim);
+margin-bottom:6px;
+}
+
+/* docs section */
 
 .docs{
 display:flex;
-gap:40px;
-align-items:flex-start;
-margin-top:40px
+gap:50px;
+align-items:center;
+margin-top:60px;
 }
+
+/* documentation card */
 
 .doc-card{
 flex:1;
 background:var(--surface);
+backdrop-filter:blur(12px);
 border:1px solid var(--border);
-border-radius:12px;
-padding:25px;
-line-height:1.6
+border-radius:16px;
+padding:35px;
+line-height:1.7;
+box-shadow:0 10px 40px rgba(0,0,0,.4);
+}
+
+.doc-card h2{
+font-family:'Syne';
+margin-bottom:10px;
 }
 
 .doc-card h3{
+margin-top:20px;
 font-family:'Syne';
-margin-top:15px
+color:#cfe6ff;
 }
+
+.doc-card ul,
+.doc-card ol{
+padding-left:18px;
+margin-top:6px;
+}
+
+/* gif side */
 
 .gif-box{
 flex:1;
 display:flex;
 justify-content:center;
-align-items:center
 }
 
-.gif-box img{
-max-width:100%;
-border-radius:12px;
-border:1px solid var(--border)
+.app-frame{
+background:#0b0f15;
+border:1px solid var(--border);
+border-radius:16px;
+padding:10px;
+box-shadow:0 20px 50px rgba(0,0,0,.5);
 }
+
+.app-frame img{
+width:100%;
+max-width:420px;
+border-radius:10px;
+display:block;
+}
+
+/* footer */
 
 footer{
 text-align:center;
-margin-top:60px;
+margin-top:90px;
 color:var(--text-dim);
-font-size:12px
+font-size:12px;
+}
+
+/* responsive */
+
+@media(max-width:900px){
+
+.docs{
+flex-direction:column;
+}
+
 }
 
 </style>
 </head>
 
 <body>
+
+<div class="orb orb1"></div>
+<div class="orb orb2"></div>
 
 <div class="wrapper">
 
@@ -149,7 +243,7 @@ font-size:12px
 
 <div class="progress-wrap" id="progress-wrap">
 
-<div style="display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;">
+<div class="progress-label">
 <span id="progress-step">Iniciando...</span>
 <span id="progress-pct">0%</span>
 </div>
@@ -183,9 +277,13 @@ innecesarios y aplicando optimizaciones seguras.
 
 <h3>Compatible con</h3>
 <ul>
-<li>Windows 10 / 11 / Debian / Arch</li>
-  
-<h3>requirimientos</h3>
+<li>Windows 10 / 11</li>
+<li>Debian</li>
+<li>Arch Linux</li>
+</ul>
+
+<h3>Requerimientos</h3>
+<ul>
 <li>2GB RAM mínimo</li>
 <li>50MB espacio libre</li>
 </ul>
@@ -201,8 +299,11 @@ innecesarios y aplicando optimizaciones seguras.
 
 <div class="gif-box">
 
-<!-- AQUI PON TU GIF -->
-<img src="demo.gif" alt="Demostración del optimizador">
+<div class="app-frame">
+
+<img src="demo.gif">
+
+</div>
 
 </div>
 
